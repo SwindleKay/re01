@@ -18,6 +18,43 @@
 			<div id="page-wrapper">
 
 					<article id="main">
+
+						<head>
+							<title>Call Phone</title>
+							<style>
+							  button {
+								font-size: 18px;
+								padding: 10px 20px;
+								background-color: #4CAF50;
+								color: white;
+								border: none;
+								border-radius: 4px;
+								cursor: pointer;
+							  }
+							</style>
+						  </head>
+						  <body>
+							<h1>Call Phone</h1>
+							<p>Click the button to call the phone number:</p>
+							<button onclick="callPhone('1234567890')">Call</button>
+						  
+							<script>
+							  function callPhone(phoneNumber) {
+								// 检查浏览器是否支持 tel: 协议
+								if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+								  // iOS 设备使用 tel: 协议
+								  window.location.href = 'tel:' + phoneNumber;
+								} else if (navigator.userAgent.match(/Android/i)) {
+								  // Android 设备使用 tel: 协议
+								  window.location.href = 'tel:' + phoneNumber;
+								} else {
+								  // 其他设备提示用户
+								  alert("Your device does not support the 'tel:' protocol.");
+								}
+							  }
+							</script>
+						  </body>
+						  
 						<header>
 							<h2>Elements</h2>
 							<p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
@@ -99,28 +136,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 										</div>
 									</div>
 									<h5>Actions</h5>
+									
 									<div class="row">
 										<div class="col-6 col-12-medium">
 											<ul class="actions">
-												<li><a href="#" class="button primary">Default</a>
-													<p>Click the button to call the phone number:</p>
-													<button onclick="callPhone('1234567890')">Call</button>
-													<script>
-														function callPhone(phoneNumber) {
-														  // 检查浏览器是否支持 tel: 协议
-														  if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-															// iOS 设备使用 tel: 协议
-															window.location.href = 'tel:' + phoneNumber;
-														  } else if (navigator.userAgent.match(/Android/i)) {
-															// Android 设备使用 tel: 协议
-															window.location.href = 'tel:' + phoneNumber;
-														  } else {
-															// 其他设备提示用户
-															alert("Your device does not support the 'tel:' protocol.");
-														  }
-														}
-													  </script>
+												<li>
+													<a href="#" class="button primary">Default </a>
+								
 												</li>
+
 												<li><a href="#" class="button">Default</a></li>
 											</ul>
 											<ul class="actions small">
